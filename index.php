@@ -21,7 +21,7 @@ pr("REQUEST", $request_data);
 
 pr("COOKIE", $_COOKIE);
 pr("SESSION", $_SESSION);
-pr("SERVER", $_SESSION);
+pr("SERVER", $_SERVER);
 pr("FILES", $_FILES);
 
 
