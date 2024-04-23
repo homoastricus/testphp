@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>It Pelag памятка по веб-технологиям</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" type="text/css"
+          rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <div class="row bg-info text-white pt-2 pb-2">
+        <div class="col-12">
+            <h3 class="text-center text-muted">It Pelag - памятка по веб-технологиям</h3>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-muted fs-6">
+            Приложение или технология
+
+        </div>
+        <div class="col-9 text-muted fs-6">
+            ссылка для скачивания или установки + комментарий
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3 text-success">
+            1. IDE для разработки веб-приложений
+        </div>
+        <div class="col-9">
+            <a href="https://www.jetbrains.com/phpstorm/download/">phpstorm</a>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-success">
+            2. Настройка dns локальных хостов
+        </div>
+        <div class="col-9">
+            <span class="text-muted">
+            C:\Windows\System32\drivers\etc\hosts - 176.119.147.36 test.site
+            176.119.147.36 laravel.site
+                </span>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-success">
+            3. Утилита mobaxterm
+        </div>
+        <div class="col-9">
+            <span class="text-muted">
+                Ssh-клиент (+ cygwin оболочка) для Windows
+                <a href="https://mobaxterm.mobatek.net/download.html">установить <b>mobaxterm</b></a>
+                Тестовый сервер на ближайшее время <a href="http://176.119.147.36">176.119.147.36</a>
+            В программе потребуется добавить новую ssh-сессию, подключиться к удаленному серверу по ssh,
+            адрес сервера <b>176.119.147.36</b> логин <b>root</b>, пароль <b>testpasspelag</b>
+
+                Программа дает удобный интерфейс, но не обязательна для использования.
+                Рабочу через ssh с удаленным сервером можно организовать через Windows клиент <b>Putty</b> или же
+                напрямую в <b>phpstorm</b> через встроенный терминал.
+                Для соединения через <b>phpstorm</b> терминал используется команда <b>ssh root@176.119.147.36 </b>
+                </span>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-success">
+            4. Веб-сервер Nginx
+        </div>
+        <div class="col-9">
+            <span class="text-muted">
+                 <a href="https://nginx.org/en/docs/beginners_guide.html">Документация на английском</a>
+            <br><br>
+            Основные команды (актуально для ос типа debian / ubuntu):<br>
+            <code>service nginx restart</code> - перегрузка,<br>
+            <code>service nginx stop</code>  - остановка веб-сервера,<br>
+            <code>service nginx start</code>  - запуск веб-сервера,<br>
+            <code>nginx -t </code> - проверка валидациии конфигурации сервера и статус<br>
+            <code>service nginx status</code> - статус (информация о состоянии) веб-сервера<br>
+            <code>cd /etc/nginx </code>- расположение конфигурации<br>
+            <code>cd /etc/nginx/site-available </code>- расположение конфигурации виртуальных хостов<br>
+            </span>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-success">
+            5. Язык программирования Рhp
+        </div>
+        <div class="col-9">
+            <span class="text-muted">
+            Установка <b>php</b> 8 (желательно не ниже версии 8.0, в идеале - 8.2)<br>
+                <a href="https://www.php.net/manual/ru/index.php">Документация</a><br>
+            Для ос ubuntu процесс установки описан хорошо
+                 <a href="https://www.linuxcapable.com/how-to-install-php-8-3-on-ubuntu-linux">тут</a><br>
+            Для других ОС (windows) самые удобные варианты сборки:<br>
+            <a href="https://www.apachefriends.org/download.html">xampp</a> или <a href="https://ospanel.io/">open server</a> <br><br>
+            По использованию <b>xampp</b> есть опыт, если что подскажу, с <b>open server</b> надо будет разбираться самим, по документации
+            </span>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-success">
+            5*. Модуль Рhp-fpm
+        </div>
+        <div class="col-9">
+            <span class="text-muted">
+                 данные команды актуальны непосредственно для учебного сервера, на других серверах, на других ОС и для других версий интерпретатора
+                <b>php</b> команда может существенно отличаться<sup>*</sup>)<br><br>
+                <code>service php8.2-fpm restart</code> - Перегрузка модуля php-fpm<br>
+                <code>service php8.2-fpm start</code> - запуск модуля php-fpm<br>
+                <code>service php8.2-fpm stop</code> - остановка модуля php-fpm<br>
+                <code>service php8.2-fpm status</code> - вывод статуса активности модуля php-fpm<br>
+            </span>
+        </div>
+    </div>
+
+
+    <div class="row mt-3">
+        <div class="col-3 text-success">
+            6. Фреймворк <b>Laravel</b>
+        </div>
+        <div class="col-9">
+            <span class="text-muted">
+                Раздел будет заполняться...
+                <a href="https://laravel.su">документация по фреймворку</a>
+            </span>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-success">
+            7. База данных <b>MySQL</b>
+        </div>
+        <div class="col-9">
+            <span class="text-muted">
+                <a href="https://dev.mysql.com/doc/">документация по MySQL</a>
+                Установка в зависимости от ОС (либо сборка для windows, либо через пакетный менеджер через консоль)
+            </span>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
